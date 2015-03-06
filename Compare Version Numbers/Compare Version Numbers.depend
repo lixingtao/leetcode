@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1421718642 source:/home/li-xingtao/桌面/leetcode/Compare Version Numbers/main.cpp
+	<iostream>
+	<cstdio>
+	<cstdlib>
+	<algorithm>
+	<vector>
+	<map>
+	<string>
+	<queue>
+	<stack>
+

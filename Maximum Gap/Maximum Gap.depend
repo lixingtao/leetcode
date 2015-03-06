@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1421725770 source:/home/li-xingtao/桌面/leetcode/Maximum Gap/main.cpp
+	<iostream>
+	<cstring>
+	<cstdio>
+	<algorithm>
+	<cstdlib>
+	<vector>
+
