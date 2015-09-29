@@ -10,8 +10,34 @@
 
 using namespace std;
 
+queue<int> que;
+int tag = 0;
 
-queue<int> qu[2];
+void push(int x) {
+    que.push(x);
+    int len = que.size();
+    for (int i = 0; i < len -1; i++) {
+        que.push(que.front());
+        que.pop();
+    }
+}
+
+// Removes the element on top of the stack.
+void pop() {
+    que.pop();
+}
+
+// Get the top element.
+int top() {
+    return que.front();
+}
+
+// Return whether the stack is empty.
+bool empty() {
+    return que.empty();
+}
+
+/*queue<int> qu[2];
 int tag = 0;
 
 void push(int x) {
@@ -45,7 +71,7 @@ int top() {
 // Return whether the stack is empty.
 bool empty() {
     return qu[tag].empty();
-}
+}*/
 
 int main()
 {
