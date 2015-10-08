@@ -1,0 +1,60 @@
+#include <vector>
+#include <map>
+#include <algorithm>
+#include <cstring>
+#include <cstdlib>
+#include <cstdio>
+#include <queue>
+#include <stack>
+#include <iostream>
+
+using namespace std;
+
+int dx[4] = {-1, 0, 1, 0};
+int dy[4] = {0, 1, 0, -1};
+
+void visit(int spos, int lenx, int leny, vector<vector<char> > grid, int visited[lenx][leny]) {
+    queue<int> que;
+    que.push(spos / leny + spos % leny);
+    visited[spos/leny][spos%leny] = 1;
+
+    while(!que.empty()) {
+        int pos = que.front();
+        que.pop();
+        int x = pos / leny;
+        int y = pos % leny;
+        
+        for (int t = 0; t < 4; t++) {
+            int newx = x + dx[t];
+            int newy = y + dy[t];
+            if (newx < lenx && newx >= 0 && newy < leny && newy >=0
+                    && !visited[newx][newy]) {
+                visited[newx][newy] = 1;
+                que.push(newx * leny + newy);
+            }
+        }
+    }
+}
+
+int numIslands(vector<vector<char> >& grid) {
+    int lenx = grid.size();
+    if (!lenx) return 0;
+    int leny = grid[0].size();
+    if (!leny) return 0;
+
+    int visited[lenx][leny];
+    cout<<sizeof(visited)<<endl;
+
+    int cnt = 0;
+    for (int i = 0; i < lenx; i++) {
+        for (int j = 0; j < leny; j++) if (!visited[i][j]) {
+            visit(i * leny + j, lenx, leny, grid, visited);
+            cnt ++;
+        }
+    }
+}
+
+int main()
+{
+    return 0;
+}
