@@ -1,0 +1,20 @@
+#include <vector>
+#include <map>
+#include <cstring>
+#include <cstdlib>
+#include <cstdio>
+#include <algorithm>
+#include <iostream>
+
+using namespace std;
+
+const int maxn = 10010;
+const int maxe = 100010;
+
+bool canFinish(int numCourses, vector<pair<int, int>>& prerequisites) {
+}
+
+int main()
+{
+    return 0;
+}
